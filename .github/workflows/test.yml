@@ -8,7 +8,7 @@ on:
       - '**.java'
       - 'pom.xml'
   pull_request:
-    branches: [ master ]
+    branches: [ master, main ]
 
 jobs:
   test:
