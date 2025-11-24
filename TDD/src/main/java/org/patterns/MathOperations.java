@@ -3,6 +3,9 @@ package org.patterns;
 public class MathOperations {
 
     public double[] getSquareRoots(double a, double b, double c) {
+        checkArgument(a);
+        checkArgument(b);
+        checkArgument(c);
 
         double x1, x2;
         double discriminant = getDiscriminant(a, b, c);
@@ -30,5 +33,11 @@ public class MathOperations {
             throw new IllegalArgumentException("Аргумент \"a\" не может быть нулем!");
         }
         return b*b - 4*a*c;
+    }
+
+    private void checkArgument(double value) {
+         if(Double.isInfinite(value) || Double.isNaN(value)) {
+             throw new IllegalArgumentException("Некорректное число double: " + value);
+         }
     }
 }

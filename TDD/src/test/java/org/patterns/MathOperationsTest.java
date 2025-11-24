@@ -43,4 +43,16 @@ class MathOperationsTest {
 
        Assertions.assertEquals("Аргумент \"a\" не может быть нулем!", exception.getMessage());
     }
+
+    @Test
+    void getSquareRoots_haveNaN() {
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> mathOperations.getSquareRoots(Double.NaN, 3, 5));
+    }
+
+    @Test
+    void getSquareRoots_infinity() {
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> mathOperations.getSquareRoots(1, Double.POSITIVE_INFINITY, 5));
+    }
 }
