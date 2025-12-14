@@ -12,6 +12,7 @@
 
     <modules>
         <module>TDD</module>
+        <module>SOLID2</module>
     </modules>
 
     <properties>
