@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SOLID2" />
         <module name="TDD" />
+        <module name="ExceptionAndSolid" />
       </profile>
     </annotationProcessing>
   </component>
