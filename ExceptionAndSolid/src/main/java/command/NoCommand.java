@@ -13,7 +13,7 @@ public class NoCommand implements Command {
 
     @Override
     public void execute() {
-        log.warn("При выполнении команды - {}, возникло исключение {}. Необходимо добавить в регистр обработчик.",
+        log.warn("Нет обработчика для команды - {} с исключением {}.",
                 command.getClass().getSimpleName(), exception.getClass().getSimpleName());
     }
 }

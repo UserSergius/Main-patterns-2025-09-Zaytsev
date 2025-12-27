@@ -11,7 +11,7 @@ public class LoggingCommand implements Command {
 
     @Override
     public void execute() {
-        log.error("Было выбрашено исключение - {}, ошибка - {}",
+        log.warn("Было выбрашено исключение - {}, ошибка - {}",
                 exception.getClass().getSimpleName(), exception.getMessage());
     }
 }

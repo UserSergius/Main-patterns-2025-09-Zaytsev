@@ -1,13 +1,9 @@
+import command.CheckRepeatCommand;
 import command.Command;
-import command.ExceptionCommand;
-import command.LightTurnOffCommand;
-import command.LightTurnOnCommand;
-import command.LoggingCommand;
-import command.PutInQueueCommand;
-import command.RepeatAfterExceptionCommand;
-import command.RepeatCommand;
-import command.device.Light;
-import hadler.ExceptionHandler;
+import command.Test;
+import hadler.LoggingHandler;
+import hadler.RegistrationHandler;
+import hadler.RepeatHandler;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Deque;
@@ -20,19 +16,19 @@ public class main {
 
 
         Deque<Command> listCommands = getCommands();
-        var exceptionHandler = new ExceptionHandler();
-        exceptionHandler.registryHandler(LightTurnOffCommand.class, IllegalStateException.class, (cmd, except) -> new LoggingCommand(except));
-        exceptionHandler.registryHandler(LightTurnOnCommand.class, IllegalStateException.class, (cmd, except) -> new LoggingCommand(except));
-        exceptionHandler.registryHandler(RepeatAfterExceptionCommand.class, RuntimeException.class, (cmd, except) -> new RepeatCommand(cmd));
-        exceptionHandler.registryHandler(ExceptionCommand.class, IllegalArgumentException.class, (cmd, except) -> new PutInQueueCommand(listCommands, cmd));
+        var exceptionHandler = new RegistrationHandler(listCommands);
+        exceptionHandler.registryHandler(Test.class, NullPointerException.class, (cmd, except) -> new LoggingHandler(listCommands));
+        exceptionHandler.registryHandler(CheckRepeatCommand.class, RuntimeException.class, (cmd, except) -> new RepeatHandler(listCommands));
 
         while (!listCommands.isEmpty()) {
 
             var command = listCommands.pollFirst();
             try {
+                System.out.println("Выполнение команды - " + command.getClass().getSimpleName());
                 command.execute();
             } catch (Exception exception) {
-                exceptionHandler.handler(command, exception).execute();
+               var handler = exceptionHandler.getHandler(command, exception);
+               handler.handler(command, exception);
             }
         }
     }
@@ -40,15 +36,13 @@ public class main {
     private static Deque<Command> getCommands() {
         Deque<Command> listCommands = new LinkedList<>();
 
-        var light = new Light();
+//        var exceptionRepeat = new ExceptionCommand();
+        var test = new Test();
+        var checkRepeatCommand = new CheckRepeatCommand();
 
-        var turnOnLight = new LightTurnOnCommand(light);
-        var turnOffLight = new LightTurnOffCommand(light);
-        var repeatAfterException = new RepeatAfterExceptionCommand();
-        var exceptionRepeat = new ExceptionCommand();
-
-//        listCommands.add(repeatAfterException);
-        listCommands.add(exceptionRepeat);
+        listCommands.add(checkRepeatCommand);
+//        listCommands.add(test);
+//        listCommands.add(exceptionRepeat);
 
         return listCommands;
     }
