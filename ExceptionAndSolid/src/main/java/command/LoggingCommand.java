@@ -1,17 +1,18 @@
 package command;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
 @RequiredArgsConstructor
-@Log4j2
 public class LoggingCommand implements Command {
 
     private final Exception exception;
+    private final Command command;
 
     @Override
     public void execute() {
-        log.warn("Было выбрашено исключение - {}, ошибка - {}",
-                exception.getClass().getSimpleName(), exception.getMessage());
+        System.out.printf("Выбрашено исключение - %s, в классе - %s",
+                exception.getMessage(),
+                command.getClass().getSimpleName()
+        );
     }
 }

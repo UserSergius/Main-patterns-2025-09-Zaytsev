@@ -1,9 +1,7 @@
 package command;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 @RequiredArgsConstructor
 public class NoCommand implements Command {
 
@@ -13,7 +11,7 @@ public class NoCommand implements Command {
 
     @Override
     public void execute() {
-        log.warn("Нет обработчика для команды - {} с исключением {}.",
+        System.out.printf("Нет обработчика для команды - %s с исключением %s.",
                 command.getClass().getSimpleName(), exception.getClass().getSimpleName());
     }
 }

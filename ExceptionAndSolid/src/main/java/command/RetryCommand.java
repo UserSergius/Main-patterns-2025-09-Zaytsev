@@ -9,17 +9,17 @@ public class RetryCommand implements Command {
 
     private final Command command;
     private final Deque<Command> listCommand;
-    private int retriesLeft;
+    private int countRetries;
 
     public RetryCommand(Command commandToRetry, Deque<Command> queue, int retries) {
         this.command = commandToRetry;
         this.listCommand = queue;
-        this.retriesLeft = retries;
+        this.countRetries = retries;
     }
 
     @Override
     public void execute() {
-        if (retriesLeft-- > 0) {
+        if (0 < countRetries--) {
             listCommand.add(command);
         }
     }

@@ -13,6 +13,6 @@ public class RepeatHandler implements ExceptionHandler {
 
     @Override
     public void handler(Command command, Exception exception) {
-        listCommand.add(new RetryCommand(command, listCommand));
+        listCommand.add(new RetryCommand(command, listCommand, 0));
     }
 }

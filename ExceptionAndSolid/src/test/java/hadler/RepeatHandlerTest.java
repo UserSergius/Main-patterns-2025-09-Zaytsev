@@ -2,24 +2,24 @@ package hadler;
 
 import command.Command;
 import command.ExceptionCommand;
-import command.NoCommand;
+import command.RetryCommand;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Deque;
 import java.util.LinkedList;
 
-class NoCommandHandlerTest {
+class RepeatHandlerTest {
 
     @Test
     void handler() {
 
         Deque<Command> listCommand = new LinkedList<>();
-        var noCommandHandler = new NoCommandHandler(listCommand);
+        var loggingHandler = new RepeatHandler(listCommand);
 
-        noCommandHandler.handler(new ExceptionCommand(), new RuntimeException());
+        loggingHandler.handler(new ExceptionCommand(), new RuntimeException());
 
         Assertions.assertFalse(listCommand.isEmpty());
-        Assertions.assertInstanceOf(NoCommand.class, listCommand.getFirst());
+        Assertions.assertInstanceOf(RetryCommand.class, listCommand.getFirst());
     }
 }

@@ -13,6 +13,6 @@ public class LoggingHandler implements ExceptionHandler {
 
     @Override
     public void handler(Command command, Exception exception) {
-        listCommand.add(new LoggingCommand(exception));
+        listCommand.add(new LoggingCommand(exception, command));
     }
 }
