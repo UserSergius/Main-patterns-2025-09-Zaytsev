@@ -13,6 +13,7 @@
     <modules>
         <module>TDD</module>
         <module>SOLID2</module>
+        <module>ExceptionAndSolid</module>
     </modules>
 
     <properties>
