@@ -1,13 +1,13 @@
-package gameObject;
+package GameObject;
 
 import command.Fuel;
-import movementClass.Location;
-import movementClass.Velocity;
+import MovementClass.Location;
+import MovementClass.Velocity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rotationClasses.AngularVelocity;
-import rotationClasses.Direction;
+import RotationClasses.AngularVelocity;
+import RotationClasses.Direction;
 
 class SpaceShipTest {
 

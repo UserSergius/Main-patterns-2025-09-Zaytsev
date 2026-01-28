@@ -1,4 +1,4 @@
-package rotationClasses;
+package RotationClasses;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

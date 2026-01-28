@@ -1,4 +1,4 @@
-package rotationClasses;
+package RotationClasses;
 
 public interface RotatingObject {
 

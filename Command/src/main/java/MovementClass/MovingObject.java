@@ -1,4 +1,4 @@
-package movementClass;
+package MovementClass;
 
 public interface MovingObject {
 

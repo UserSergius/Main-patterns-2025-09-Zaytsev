@@ -5,11 +5,11 @@ import command.Fuel;
 import command.MacroCommand;
 import command.MoveCommand;
 import command.MovingForward;
-import gameObject.SpaceShip;
-import movementClass.Location;
-import movementClass.Velocity;
-import rotationClasses.AngularVelocity;
-import rotationClasses.Direction;
+import GameObject.SpaceShip;
+import MovementClass.Location;
+import MovementClass.Velocity;
+import RotationClasses.AngularVelocity;
+import RotationClasses.Direction;
 
 public class main {
 

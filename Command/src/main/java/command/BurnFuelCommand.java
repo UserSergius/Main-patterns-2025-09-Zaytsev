@@ -1,7 +1,7 @@
 package command;
 
 
-import movementClass.MovingObject;
+import MovementClass.MovingObject;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

@@ -1,10 +1,10 @@
 package command;
 
-import gameObject.SpaceShip;
-import movementClass.Location;
-import movementClass.Velocity;
-import rotationClasses.AngularVelocity;
-import rotationClasses.Direction;
+import GameObject.SpaceShip;
+import MovementClass.Location;
+import MovementClass.Velocity;
+import RotationClasses.AngularVelocity;
+import RotationClasses.Direction;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package rotationClasses;
+package RotationClasses;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

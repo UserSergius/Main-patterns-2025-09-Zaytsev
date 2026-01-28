@@ -1,9 +1,9 @@
 package command;
 
 import lombok.RequiredArgsConstructor;
-import movementClass.Location;
-import movementClass.MovingObject;
-import movementClass.Velocity;
+import MovementClass.Location;
+import MovementClass.MovingObject;
+import MovementClass.Velocity;
 
 @RequiredArgsConstructor
 public class MoveCommand implements Command {
