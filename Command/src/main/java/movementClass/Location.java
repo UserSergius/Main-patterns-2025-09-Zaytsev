@@ -1,4 +1,4 @@
-package MovementClass;
+package movementClass;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

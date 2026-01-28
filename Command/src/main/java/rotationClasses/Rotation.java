@@ -1,4 +1,4 @@
-package RotationClasses;
+package rotationClasses;
 
 public class Rotation {
 

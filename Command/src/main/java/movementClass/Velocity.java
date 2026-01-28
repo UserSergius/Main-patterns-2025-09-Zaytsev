@@ -1,4 +1,4 @@
-package MovementClass;
+package movementClass;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,10 @@ public class Velocity {
     public Velocity() {
         this.vx = 0;
         this.vy = 0;
+    }
+
+    public int getSummaryVelocity() {
+        return vx + vy;
     }
 
     public Velocity getVelocity() {

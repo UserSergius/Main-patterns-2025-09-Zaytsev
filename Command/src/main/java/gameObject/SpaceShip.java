@@ -1,13 +1,14 @@
-package GameObject;
+package gameObject;
 
-import MovementClass.Location;
-import MovementClass.MovingObject;
-import MovementClass.Velocity;
-import RotationClasses.AngularVelocity;
-import RotationClasses.Direction;
-import RotationClasses.RotatingObject;
+import command.Fuel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import movementClass.Location;
+import movementClass.MovingObject;
+import movementClass.Velocity;
+import rotationClasses.AngularVelocity;
+import rotationClasses.Direction;
+import rotationClasses.RotatingObject;
 
 @Data
 @AllArgsConstructor
@@ -17,6 +18,7 @@ public class SpaceShip implements MovingObject, RotatingObject {
     private Velocity velocity;
     private Direction direction;
     private AngularVelocity angularVelocity;
+    private Fuel fuel;
 
     @Override
     public Location getLocation() {

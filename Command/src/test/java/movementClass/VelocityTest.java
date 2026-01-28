@@ -1,4 +1,4 @@
-package MovementClass;
+package movementClass;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -30,5 +30,13 @@ class VelocityTest {
 
         Assertions.assertEquals(0, velocity.getVx());
         Assertions.assertEquals(0, velocity.getVy());
+    }
+
+    @Test
+    void getSummaryVelocity() {
+
+        var velocity = new Velocity(5,5);
+
+        Assertions.assertEquals(10, velocity.getSummaryVelocity());
     }
 }
