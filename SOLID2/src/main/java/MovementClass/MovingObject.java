@@ -2,6 +2,6 @@ package MovementClass;
 
 public interface MovingObject {
 
-    Location getLocation();
-    Velocity getVelocity();
+    MovementClass.Location getLocation();
+    MovementClass.Velocity getVelocity();
 }
